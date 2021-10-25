@@ -1,0 +1,21 @@
+
+{
+    "manifest_version":2,
+    "name":"sigh cat",
+    "version":"0.0.0",
+    "web_accessible_resources": [
+        "images/cat.jpeg"
+    ],
+    "content_scripts": [
+        {
+            "matches": [ "http://www.google.com/*"],
+            "js": ["cat_move.js"]
+        }
+    ],
+    "background":{
+        "scripts":[
+          "cat.js"
+        ],
+        "persistent": false
+    }
+}
