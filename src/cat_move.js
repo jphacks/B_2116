@@ -1,9 +1,16 @@
+function detect_voice(){
+  
+  return negative
+}
+
 async function animate() {
     await moveCenter();
     await changePose1();
     await changePose2();
   }
-  animate();
+  if (negative){
+    animate()
+  }
   
   // 真ん中に10秒かけて移動させる
   function moveCenter() {

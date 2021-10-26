@@ -4,18 +4,22 @@
     "name":"sigh cat",
     "version":"0.0.0",
     "web_accessible_resources": [
-        "images/cat.jpeg"
+        "images/cat.jpeg",
+        "images/walkcat.gif",
+        "images/sittingcat.gif",
+        "images/sleepingcat.gif"
     ],
-    "content_scripts": [
-        {
-            "matches": [ "http://www.google.com/*"],
-            "js": ["cat_move.js"]
-        }
-    ],
+    "permissions":["tabs"],
+    "browser_action":{
+        "default_icon":{
+            "16":"images/cat.jpeg"
+
+        },
+        "default_title":"深い癒しの画像",
+        "default_popup":"popup.html"
+    },
     "background":{
-        "scripts":[
-          "cat.js"
-        ],
-        "persistent": false
+        "script":"cat_move.js"
     }
+
 }
