@@ -3,13 +3,6 @@
     "manifest_version":2,
     "name":"sigh cat",
     "version":"0.0.0",
-    "web_accessible_resources": [
-        "images/cat.jpeg",
-        "images/walkcat.gif",
-        "images/sittingcat.gif",
-        "images/sleepingcat.gif"
-    ],
-    "permissions":["tabs"],
     "browser_action":{
         "default_icon":{
             "16":"images/cat.jpeg"
@@ -17,11 +10,22 @@
         "default_title":"深い癒しの画像",
         "default_popup":"popup.html"
     },
-    "content_scripts":[
+    "content_scripts": [
         {
-            "run_at":"document_end",
-            "matches":["http://*/*", "https://*/*"],
-            "js":["walkcat.js"]
+            "matches": ["<all_urls>"],
+            "js": [
+                "jquery-3.6.0.js",
+                "walkcat.js"
+            ]
         }
+    ],
+    "web_accessible_resources": [
+        "images/*.jpeg",
+        "images/*.gif"
+    ],
+    "permissions": [
+        "http://*/*",
+        "https://*/*",
+        "tabs"
     ]
 }
