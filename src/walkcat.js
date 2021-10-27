@@ -1,7 +1,6 @@
 // "use strict";
 
 $(function(){
-    
 	var $visible = $(":visible")
         .not('html')
         .not('body')
@@ -28,6 +27,7 @@ $(function(){
     });
 	
 	$body.append($walkcat);
+
 	setTimeout(blocker(), 1000);
 
     function blocker() {
@@ -35,9 +35,9 @@ $(function(){
         let $cat_blocker_2 = $('<img width="260">');
         let $cat_blocker_3 = $('<img width="260">');
         // let $cat_blocker_4 = $('<img width="260">');
-        let blocker_src_1 = chrome.extension.getURL("images/walkcat.gif");
-        let blocker_src_2 = chrome.extension.getURL("images/sittingcat.gif");
-        let blocker_src_3 = chrome.extension.getURL("images/cat.jpeg");
+        let blocker_src_1 = chrome.extension.getURL("images/a9BE7R5UTvph3aHIRnse1635322606-1635322771.gif");
+        let blocker_src_2 = chrome.extension.getURL("images/sittingncat.gif");
+        let blocker_src_3 = chrome.extension.getURL("images/sleepingcat.gif");
         // let blocker_src_4 = chrome.extension.getURL("images/cat3-4.gif");
         $cat_blocker_1.attr("src", blocker_src_1);
         $cat_blocker_2.attr("src", blocker_src_2);
@@ -63,7 +63,7 @@ $(function(){
         function moveCenter() {
             return $cat_blocker_1.animate({
                     'left': '50%'
-                }, 1000, 'linear')
+                }, 10000, 'linear')
                 .promise();
         }
         function changePose1() {
