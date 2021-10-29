@@ -40,6 +40,7 @@ $(function(){
                         break
                     }
                 }
+                looprecognition();
             }else{
                 let transcript = results[i][0].transcript;
                 interimTranscript = transcript;
@@ -50,7 +51,21 @@ $(function(){
 
     function blocker() {
         let $blocker_1 = $('<img width="260">');
-        let blocker_src_1 = chrome.extension.getURL("images/cute_seal2.gif");
+        imvar = Math.random();
+        if (imvar<0.25){
+            imgpath = "images/cute_seal2.gif";
+        }
+        else if (imvar<0.5){
+            imgpath = "images/cat.gif";
+        }
+        else if (imvar<0.75){
+            imgpath = "images/walkdog.gif"
+        }
+        else{
+            imgpath = "images/walkcat.gif"
+        }
+        let blocker_src_1 = chrome.extension.getURL(imgpath)
+
         $blocker_1.attr("src", blocker_src_1);
         $blocker_1.css({
             position: "fixed",
@@ -62,13 +77,9 @@ $(function(){
         $body.append($blocker_1);
         async function animate() {
             await moveCenter();
-            // await changePose1();
-            // await changePose2();
         }
         animate();
-        var animateOption = {
-            'left': '100%'
-        };
+
         function moveCenter() {
             return $blocker_1.animate({
                     'left': '100%'
@@ -76,4 +87,5 @@ $(function(){
                 .promise();
         }
     }
+    blocker();
 })
