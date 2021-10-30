@@ -3,6 +3,13 @@
 デモ動画
 (https://youtu.be/rWLdjNrpe2k)
 
+言語
+- Javascript
+- HTML/CSS
+実際に動かしているファイル
+- walkcat.js(様々な動物を動かすコード、音声認識コードもここ)
+- manifest.json(Chrome拡張用)
+
 ## 製品概要
 気分が落ち込んだらネッコやイッヌがブラウザ上に出現して元気付けてくれるプロダクトです。
 
